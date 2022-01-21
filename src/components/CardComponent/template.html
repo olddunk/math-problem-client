@@ -1,0 +1,26 @@
+<div class="answer_card">
+  <div class="blank_number">
+    <div class="number">
+      {{circleNumber}}
+    </div>
+  </div>
+  <div
+    class="radio_wraper"
+    v-for="(item, index) in cardItem"
+    :key="index"
+  >
+    <input
+      type="radio"
+      class="radio_input"
+      :value="item"
+      :name="'question' + quizNumber"
+      :id="'' + quizNumber + item"
+      v-model="userAnswer"
+      @change="changeHandler()"
+    >
+    <label
+      class="radio_label"
+      :for="quizNumber + item"
+    >{{item}}</label>
+  </div>
+</div>
